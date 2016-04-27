@@ -39,7 +39,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/default/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/dremora/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -53,12 +53,12 @@ local layouts =
 {
     --awful.layout.suit.floating,
     awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
+    --awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     --awful.layout.suit.tile.top,
     --awful.layout.suit.fair,
     --awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral
+    --awful.layout.suit.spiral
     --awful.layout.suit.spiral.dwindle,
     --awful.layout.suit.max,
     --awful.layout.suit.max.fullscreen,
@@ -362,6 +362,7 @@ awful.rules.rules = {
       properties = { border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
+                     size_hints_honor = false,
                      raise = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
