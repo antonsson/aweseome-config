@@ -260,6 +260,12 @@ globalkeys = awful.util.table.join(
         end,
         {description = "Increase brightness", group = "awesome"}
     ),
+    awful.key({ modkey, "Control" }, "l",
+        function ()
+            awful.util.spawn("xscreensaver-command -lock")
+        end,
+        {description = "Lock screen", group = "awesome"}
+    ),
 
     awful.key({ modkey,           }, "j",
         function ()
@@ -579,5 +585,5 @@ end
 
 run_once("compton -b")
 run_once("nm-applet")
-
+run_once("xscreensaver -no-splash")
 
