@@ -16,7 +16,7 @@ watch(
         charge = tonumber(charge)
         if (charge >= 0 and charge < 20) then
             batteryType=20
-            show_battery_warning()
+            --show_battery_warning()
         elseif (charge >= 20 and charge < 40) then
             batteryType=40
         elseif (charge >= 40 and charge < 60) then
