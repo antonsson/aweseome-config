@@ -49,6 +49,7 @@ theme.layout_max                    = theme.dir .. "/icons/max.png"
 theme.layout_fullscreen             = theme.dir .. "/icons/fullscreen.png"
 theme.layout_magnifier              = theme.dir .. "/icons/magnifier.png"
 theme.layout_floating               = theme.dir .. "/icons/floating.png"
+theme.layout_centerwork             = theme.dir .. "/icons/centerworkg.png"
 
 theme.tasklist_disable_icon         = true
 theme.tasklist_floating             = ""

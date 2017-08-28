@@ -8,9 +8,7 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local assault = require("assault")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
-
-require("awful.autofocus")
-require("battery")
+local lain = require("lain")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -56,20 +54,21 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    --awful.layout.suit.floating,
     awful.layout.suit.tile,
     --awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
+    awful.layout.suit.floating,
+    --awful.layout.suit.fair,
     --awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
+    --awful.layout.suit.max,
     --awful.layout.suit.max.fullscreen,
     --awful.layout.suit.magnifier,
     --awful.layout.suit.corner.nw,
     -- awful.layout.suit.corner.ne,
     -- awful.layout.suit.corner.sw,
     -- awful.layout.suit.corner.se,
+    lain.layout.centerwork
 }
 -- }}}
 
@@ -122,6 +121,12 @@ myassault = assault({
   critical_level = 0.15,
   critical_color = "#ff0000",
   charging_color = "#00ff00"
+})
+
+local batwidget = lain.widget.bat({
+  settings = function()
+     widget:set_text(" " .. bat_now.perc .. "% " .. bat_now.status .. " ")
+  end
 })
 
 -- Create a wibox for each screen and add it
@@ -221,7 +226,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
-            batteryIcon,
+            batwidget,
             mytextclock,
             s.mylayoutbox,
         },
