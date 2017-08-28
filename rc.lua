@@ -10,6 +10,8 @@ local assault = require("assault")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 local lain = require("lain")
 
+require("awful.autofocus")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
