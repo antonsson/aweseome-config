@@ -514,7 +514,6 @@ client.connect_signal("manage", function (c)
     -- Set the windows at the slave,
     -- i.e. put it at the end of others instead of setting it master.
     if not awesome.startup then awful.client.setslave(c) end
-        awful.client.setslave(c)
 
     if awesome.startup and
       not c.size_hints.user_position
@@ -592,4 +591,5 @@ end
 run_once("compton -b")
 run_once("nm-applet")
 run_once("xscreensaver -no-splash")
+run_once("xbindkeys")
 
